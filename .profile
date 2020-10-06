@@ -19,4 +19,5 @@ export PATH HOME TERM
 alias dotfiles="/usr/local/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 alias v="nvim"
 
-export PS1="\w > " 
+PS1="\w > "
+export PS1
