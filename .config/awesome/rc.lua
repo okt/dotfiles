@@ -70,7 +70,11 @@ theme.border_color_marked = xrdb.color10
 theme.tooltip_fg = theme.fg_normal
 theme.tooltip_bg = theme.bg_normal
 
-theme.taglist_spacing     = 8
+theme.taglist_spacing   = 2
+theme.tasklist_spacing	= 2
+theme.tasklist_align	= "center"
+
+theme.tasklist_plain_task_name = false
 -- theme.taglist_font        = "awesomewm 11"
 
 -- Define the icon theme for application icons. If not set then the icons
@@ -208,7 +212,7 @@ awful.screen.connect_for_each_screen(function(s)
     gears.wallpaper.set(xrdb.background)
 
     -- Each screen has its own tag table.
-    awful.tag({ "NET", "CHAT", "CODE", "ART", "PLAY" }, s, awful.layout.layouts[1])
+    awful.tag({ "  NET  ", "  CHAT  ", "  CODE  ", "  METH  ", "  JUNK  " }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
