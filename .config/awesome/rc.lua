@@ -60,14 +60,18 @@ theme.fg_focus      = theme.bg_normal
 theme.fg_urgent     = theme.bg_normal
 theme.fg_minimize   = theme.bg_normal
 
-theme.useless_gap   = 12
-theme.border_width  = 4
+theme.tasklist_disable_icon = true
+theme.useless_gap   = 8
+theme.border_width  = 2
 theme.border_color_normal = xrdb.color0
 theme.border_color_active = theme.bg_focus
 theme.border_color_marked = xrdb.color10
 
 theme.tooltip_fg = theme.fg_normal
 theme.tooltip_bg = theme.bg_normal
+
+theme.taglist_spacing     = 8
+-- theme.taglist_font        = "awesomewm 11"
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
@@ -133,8 +137,9 @@ myawesomemenu = {
    { "quit", function() awesome.quit() end}
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+mymainmenu = awful.menu({ items = { { "Term", terminal },
+				    { "fox", "/usr/local/bin/firefox"},
+				    { "awesome", myawesomemenu, beautiful.awesome_icon }
                                   }
                         })
 
@@ -195,26 +200,11 @@ local tasklist_buttons = gears.table.join(
                                               awful.client.focus.byidx(-1)
                                           end))
 
---local function set_wallpaper(s)
-    -- Wallpaper
---    if beautiful.wallpaper then
---        local wallpaper = beautiful.wallpaper
-        -- If wallpaper is a function, call it with the screen
---        if type(wallpaper) == "function" then
-  --          wallpaper = wallpaper(s)
---        end
---        gears.wallpaper.maximized(wallpaper, s, true)
---    end
---end
-
--- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 --screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     -- set_wallpaper(s)
-    -- local xrdb = xresources.get_current_theme()
-    -- gears.wallpaper.set("#141c21")
     gears.wallpaper.set(xrdb.background)
 
     -- Each screen has its own tag table.
@@ -248,7 +238,8 @@ awful.screen.connect_for_each_screen(function(s)
             s.mytaglist,
             s.mypromptbox,
         },
-        s.mytasklist, -- Middle widget
+        -- okttasklist, --My widget 
+	 s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             --- mykeyboardlayout,
