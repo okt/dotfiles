@@ -16,6 +16,7 @@ export ENV="$HOME/.kshrc"
 export PATH HOME TERM
 # Add local 'pip' to PATH:
 export PATH="${PATH}:${HOME}/.local/"
+export PATH="${PATH}:$home/.local/bin/"
 export PATH="${PATH}:/usr/local/lib/python3.7/site-packages/"
 
 # XDG Configuration to cleaup Home dir
@@ -34,5 +35,3 @@ alias ff="firefox &"
 alias fp="firefox -private-window &"
 alias pip="pip3.7"
 
-PS1="\w > "
-export PS1
