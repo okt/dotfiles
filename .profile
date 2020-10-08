@@ -34,4 +34,5 @@ alias l="colorls -p"
 alias ff="firefox &"
 alias fp="firefox -private-window &"
 alias pip="pip3.7"
+alias pf='/home/okt/Src/pfetch/pfetch'
 
