@@ -7,7 +7,7 @@
 
 /* Import the CSS file.
    Change 'ian' to your username. */
-@import url('file:///home/okt/.cache/wal/colors.css');
+@import url('file:///home/okt/.config/dotfiles/themes/current/colors.css');
 
 :root {
 	/*change the default blue accent color in many different elements.*/

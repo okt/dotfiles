@@ -1,5 +1,10 @@
 !! Colorscheme
 
+
+!! oktSquash Theme - October 2020
+!! include "/home/okt/.config/dotfiles/themes/oktSquash/colors.Xresources"
+
+!! include "/home/okt/.config/dotfiles/themes/current/colors.Xresouces"
 #include "/home/okt/.cache/wal/colors.Xresources"
 
 !! URxvt Application Settings
