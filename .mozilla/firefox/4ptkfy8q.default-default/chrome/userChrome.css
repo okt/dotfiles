@@ -1,0 +1,367 @@
+
+/*
+** In order for userChrome.css to work, you need to open `about:config` and change
+** `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`.
+*/
+
+
+/* Import the CSS file.
+   Change 'ian' to your username. */
+@import url('file:///home/okt/.cache/wal/colors.css');
+
+:root {
+	/*change the default blue accent color in many different elements.*/
+	--lwt-accent-color: var(--color5) !important;
+
+	/*color of highlighted text in the urlbar, searchbar, and other UI elements*/
+	--chrome-selection-background-color: var(--cursor) !important;
+
+	--chrome-content-seperator-color: none !important;
+	padding-top: 0px !important;
+	margin-top: 0px !important;
+}
+
+#navigator-toolbox {
+  -moz-appearance: none;
+  background-color: #0f111a00 !important;
+  border-top: none !important;
+	padding-top: none !important;
+}
+#TabsToolbar {
+	margin-top: 0px !important;
+	padding-top: 0px !important;
+	border-bottom: 0px transparent !important;
+	border-top: 0px transparent !important;
+}
+.browser-toolbar:not(.titlebar-color),
+#tabbrowser-tabs:not([movingtab])
+  > .tabbrowser-arrowscrollbox
+  > .tabbrowser-tab
+  > .tab-stack
+  > .tab-background[multiselected='true']:-moz-lwtheme,
+#tabbrowser-tabs:not([movingtab])
+  > .tabbrowser-arrowscrollbox
+  > .tabbrowser-tab
+  > .tab-stack
+  > .tab-background[selected='true']:-moz-lwtheme,
+box {
+  background-color: var(--color7) !important;
+  background-image: none !important;
+}
+* {
+  --tab-line-color: var(--background);
+  --tab-min-width: 76px;
+}
+
+.tab-background[selected="true"] {
+background-color: var(--color5) !important; /* this sets the color of the tab background */
+border-color: var(--color5) !important;
+}
+.tab-line[selected="true"] {
+background-color : var(--cursor) !important; /* this sets the color of the line above the tab */
+}
+.tab-line {
+	height: 0 !important;
+}
+
+#urlbar:not(.megabar):not([focused='true']):-moz-lwtheme,
+#urlbar.megabar:not([focused='true']):-moz-lwtheme > #urlbar-background,
+#navigator-toolbox #searchbar:not(:focus-within):-moz-lwtheme,
+#navigator-toolbox {
+  border: none !important;
+}
+#urlbar:not(.megabar):-moz-lwtheme,
+#urlbar.megabar:-moz-lwtheme > #urlbar-background,
+#navigator-toolbox #searchbar:-moz-lwtheme {
+  background-color: var(--background) !important;
+}
+#navigator-toolbox {
+  z-index: 1 !important;
+  --tabs-border-color: var(--color7) !important;
+}
+
+toolbox {
+  z-index: 20 !important;
+  margin-top: 0px !important;
+  margin-bottom: -32px !important;
+  height: 0 !important;
+}
+
+#nav-bar {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out !important;
+}
+
+:hover > toolbox,
+toolbox:focus-within {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out !important ;
+}
+:hover > #nav-bar,
+toolbox:focus-within > #nav-bar {
+  opacity: 1;
+  background-color: var(--color7) !important;
+}
+
+#urlbar {
+  color: var(--color0) !important;
+  caret-color: var(--color3);
+}
+
+#urlbar ::-moz-selection,
+.searchbar-textbox ::-moz-selection {
+   background-color: var(--color7) !important;
+   color: var(--color0) !important;
+}
+
+
+#tracking-protection-icon-container {
+   background-color: transparent !important;
+}
+
+#tracking-protection-icon-box {
+   background-color: transparent !important;
+}
+#identity-icon  {
+   background-color: transparent;
+}
+
+#identity-box {
+   background-color: transparent !important;
+}
+
+/*** Megabar Styler General - version 2020-07-27 ***/
+
+
+
+  /*** General Preferences ***/
+
+  :root {
+
+    /* Number of pixels of enlargement when URL bar is focused */
+
+    --mbarstyler-popout-pixels: 0px; /* [0px - 7px] */
+
+
+
+    /* Top Bar Display or Not */
+
+    --mbarstyler-top-bar-display: block; /* [block,none] */
+
+
+
+    /* Font sizes (default: 13.8px for title, 10.2px for URL) */
+
+    --mbarstyler-title-font-size: 13px; /* [13px - 18px] */
+
+    --mbarstyler-url-font-size: 12px; /* [12px - 16px] */
+
+
+
+    /* Rows to show without scrolling */
+
+    --mbarstyler-max-rows-without-scrolling: 10;
+
+
+
+    /* Bottom border for each result row */
+
+    --mbarstyler-bottom-border-width: 0px; /* [0px or 1px] */
+
+    
+
+    /* Match display style */
+
+    --mbarstyler-match-weight: 700; /* [400,700] */
+
+    --mbarstyler-match-background-opacity: 0.0; /* [0.0,0.05,0.1] */
+
+  }
+
+
+
+  /*** URL bar enlargement or lack thereof ***/
+
+
+
+  /* Compute new position, width, and padding */
+
+  #urlbar[breakout][breakout-extend] {
+
+    top: calc(5px - var(--mbarstyler-popout-pixels)) !important;
+
+    left: calc(0px - var(--mbarstyler-popout-pixels)) !important;
+
+    width: calc(100% + (2 * var(--mbarstyler-popout-pixels))) !important;
+
+    padding: var(--mbarstyler-popout-pixels) !important;
+
+  }
+
+  [uidensity="compact"] #urlbar[breakout][breakout-extend] {
+
+    top: calc(3px - var(--mbarstyler-popout-pixels)) !important;
+
+  }
+
+  [uidensity="touch"] #urlbar[breakout][breakout-extend] {
+
+    top: calc(4px - var(--mbarstyler-popout-pixels)) !important;
+
+  }
+
+
+
+  /* Prevent shift of URL bar contents */
+
+  #urlbar[breakout][breakout-extend] > #urlbar-input-container {
+
+    height: var(--urlbar-height) !important;
+
+    padding: 0 !important;
+
+  }
+
+
+
+  /* Do not animate */
+
+  #urlbar[breakout][breakout-extend] > #urlbar-background {
+
+    animation: none !important;;
+
+  }
+
+
+
+  /* Remove shadows */
+
+  #urlbar[breakout][breakout-extend] > #urlbar-background {
+
+    box-shadow: none !important;
+
+  }
+
+
+
+  /*** Top "Blue Bar" Display ***/
+
+
+
+  .urlbarView-row:first-of-type {
+
+    display: var(--mbarstyler-top-bar-display) !important;
+
+  }
+
+
+
+  /*** Font Sizes and Scrolling ***/
+
+
+
+  /* Title font-size */
+
+  .urlbarView-row .urlbarView-title {
+
+    font-size: var(--mbarstyler-title-font-size) !important;
+
+  }
+
+
+
+  /* URL / action font-size */
+
+  .urlbarView-row .urlbarView-secondary,
+
+  .urlbarView-row .urlbarView-url,
+
+  .urlbarView-row .urlbarView-action {
+
+    font-size: var(--mbarstyler-url-font-size) !important;
+
+  }
+
+
+
+  /* Set max-height for items visible without scrolling */
+
+  #urlbarView-results, #urlbar-results {
+
+    height: unset !important;
+
+    max-height: calc(2.5 * (var(--mbarstyler-title-font-size) + var(--mbarstyler-bottom-border-width)) * var(--mbarstyler-max-rows-without-scrolling)) !important;
+
+  }
+
+  #urlbar-results {
+
+    overflow-y: auto !important; 
+
+  }
+
+
+
+  /* Clean up extra spacing at the top and bottom */  
+
+  #urlbar-results {
+
+    padding-top: 0 !important;
+
+    padding-bottom: 0 !important;
+
+  }
+
+
+
+  /* Subtle border between results */
+
+  .urlbarView-row:not(:last-of-type) {
+
+    border-bottom: var(--mbarstyler-bottom-border-width) solid rgba(0, 0, 0, 0.1) !important;
+
+  }
+
+
+
+  /* Match Styling Like Fx43-47 */
+
+  .urlbarView-row:not([selected]) .urlbarView-title strong,
+
+  .urlbarView-row:not([selected]) .urlbarView-url strong {
+
+    font-weight: var(--mbarstyler-match-weight) !important;
+
+    border-radius: 2px;
+
+    box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, calc(var(--mbarstyler-match-background-opacity) * 2));
+
+    background-color: rgba(0, 0, 0, var(--mbarstyler-match-background-opacity));
+
+  }
+
+  [lwt-popup-brighttext] .urlbarView-row:not([selected]) .urlbarView-title strong,
+
+  [lwt-popup-brighttext] .urlbarView-row:not([selected]) .urlbarView-url strong {
+
+    box-shadow: inset 0 0 1px 1px rgba(255, 255, 255, calc(var(--mbarstyler-match-background-opacity) * 2));
+
+    background-color: rgba(255, 255, 255, var(--mbarstyler-match-background-opacity));
+
+  }
+
+  [lwthemetextcolor="bright"] .urlbarView-row:not([selected]) .urlbarView-title strong,
+
+  [lwthemetextcolor="bright"] .urlbarView-row:not([selected]) .urlbarView-url strong {
+
+    box-shadow: inset 0 0 1px 1px rgba(192, 192, 192, calc(var(--mbarstyler-match-background-opacity) * 4));
+
+    background-color: rgba(192, 192, 192, calc(var(--mbarstyler-match-background-opacity) * 3));
+
+  }
+
+
+
+/*** End of: Megabar Styler General ***/
+
+
