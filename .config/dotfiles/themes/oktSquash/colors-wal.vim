@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/okt/Pics/kristaps-ungurs-B6CN3tgm6c4-unsplash.jpg"
+let background = "#141211"
+let foreground = "#e8d0a2"
+let cursor     = "#e8d0a2"
+
+" Colors
+let color0  = "#141211"
+let color1  = "#98341A"
+let color2  = "#9F5B1B"
+let color3  = "#BA5234"
+let color4  = "#DC6414"
+let color5  = "#EB9622"
+let color6  = "#F3AD52"
+let color7  = "#e8d0a2"
+let color8  = "#a29171"
+let color9  = "#98341A"
+let color10 = "#9F5B1B"
+let color11 = "#BA5234"
+let color12 = "#DC6414"
+let color13 = "#EB9622"
+let color14 = "#F3AD52"
+let color15 = "#e8d0a2"

@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/okt/Pics/adrien-converse-FWhTeWRCeis-unsplash.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#100c0d",
+        "foreground": "#ddcecf",
+        "cursor": "#ddcecf"
+    },
+    "colors": {
+        "color0": "#100c0d",
+        "color1": "#8B5D34",
+        "color2": "#896168",
+        "color3": "#8C6B74",
+        "color4": "#7A7887",
+        "color5": "#997A85",
+        "color6": "#AE9098",
+        "color7": "#ddcecf",
+        "color8": "#9a9090",
+        "color9": "#8B5D34",
+        "color10": "#896168",
+        "color11": "#8C6B74",
+        "color12": "#7A7887",
+        "color13": "#997A85",
+        "color14": "#AE9098",
+        "color15": "#ddcecf"
+    }
+}

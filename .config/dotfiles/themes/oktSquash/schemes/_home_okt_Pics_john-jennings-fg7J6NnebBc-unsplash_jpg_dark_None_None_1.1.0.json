@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/okt/Pics/john-jennings-fg7J6NnebBc-unsplash.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#0a0807",
+        "foreground": "#dcdad1",
+        "cursor": "#dcdad1"
+    },
+    "colors": {
+        "color0": "#0a0807",
+        "color1": "#AB9169",
+        "color2": "#C3A059",
+        "color3": "#3B6598",
+        "color4": "#78849A",
+        "color5": "#ADA697",
+        "color6": "#C6B596",
+        "color7": "#dcdad1",
+        "color8": "#9a9892",
+        "color9": "#AB9169",
+        "color10": "#C3A059",
+        "color11": "#3B6598",
+        "color12": "#78849A",
+        "color13": "#ADA697",
+        "color14": "#C6B596",
+        "color15": "#dcdad1"
+    }
+}

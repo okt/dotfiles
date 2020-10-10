@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/okt/Pics/alex-perez-pEgsWN0kwbQ-unsplash.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#09040B",
+        "foreground": "#ca88bf",
+        "cursor": "#ca88bf"
+    },
+    "colors": {
+        "color0": "#09040B",
+        "color1": "#66165F",
+        "color2": "#165760",
+        "color3": "#44496A",
+        "color4": "#981166",
+        "color5": "#C80779",
+        "color6": "#56388A",
+        "color7": "#ca88bf",
+        "color8": "#8d5f85",
+        "color9": "#66165F",
+        "color10": "#165760",
+        "color11": "#44496A",
+        "color12": "#981166",
+        "color13": "#C80779",
+        "color14": "#56388A",
+        "color15": "#ca88bf"
+    }
+}

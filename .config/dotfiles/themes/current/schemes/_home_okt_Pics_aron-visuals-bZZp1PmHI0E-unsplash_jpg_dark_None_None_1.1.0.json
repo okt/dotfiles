@@ -1,0 +1,27 @@
+{
+    "wallpaper": "/home/okt/Pics/aron-visuals-bZZp1PmHI0E-unsplash.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#000002",
+        "foreground": "#7ce8ef",
+        "cursor": "#7ce8ef"
+    },
+    "colors": {
+        "color0": "#000002",
+        "color1": "#063193",
+        "color2": "#0A5AA0",
+        "color3": "#3A66AE",
+        "color4": "#0D69CE",
+        "color5": "#2CA5C8",
+        "color6": "#0F9EE4",
+        "color7": "#7ce8ef",
+        "color8": "#56a2a7",
+        "color9": "#063193",
+        "color10": "#0A5AA0",
+        "color11": "#3A66AE",
+        "color12": "#0D69CE",
+        "color13": "#2CA5C8",
+        "color14": "#0F9EE4",
+        "color15": "#7ce8ef"
+    }
+}
