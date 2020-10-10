@@ -7,6 +7,7 @@ local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
+local nerdfonts = require ("nerd-fonts")
 -- local dpi = xresources.apply.dpi
 local xrdb = xresources.get_current_theme()
 -- Notification library
@@ -48,7 +49,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 --beautiful.init(gears.filesystem.get_configuration_dir() .. "theme-okt.lua")
 
 theme = beautiful.get()
-theme.font = "JetBrainsMono 8"
+theme.font = "JetBrainsMono Nerd Font Mono 10"
 theme.bg_normal     = xrdb.background
 theme.bg_focus      = xrdb.color6
 theme.bg_urgent     = xrdb.color9
@@ -61,8 +62,8 @@ theme.fg_urgent     = theme.bg_normal
 theme.fg_minimize   = theme.bg_normal
 
 theme.tasklist_disable_icon = true
-theme.useless_gap   = 8
-theme.border_width  = 2
+theme.useless_gap         = 8
+theme.border_width        = 2
 theme.border_color_normal = xrdb.color0
 theme.border_color_active = theme.bg_focus
 theme.border_color_marked = xrdb.color10
@@ -70,9 +71,32 @@ theme.border_color_marked = xrdb.color10
 theme.tooltip_fg = theme.fg_normal
 theme.tooltip_bg = theme.bg_normal
 
+theme.prompt_font         = "JetBrainsMono Nerd Font Mono 10"
+
+theme.menu_border_width   = 1
+theme.menu_height         = 24
+theme.menu_submenu_icon   = nil
+theme.menu_submenu        = nerdfonts.font_awesome.chevron_right .. "  "
+--theme.menu_font         = "JetBrainsMono Nerd Font Mono 16"
+theme.menu_width          = 100
+theme.menu_border_color   = xrdb.black
+
+theme.hotkeys_border_width = 1
+theme.hotkeys_border_color = xrdb.black
+theme.hotkeys_group_margin = 16
+
 theme.taglist_spacing   = 2
 theme.tasklist_spacing	= 2
-theme.tasklist_align	= "center"
+theme.tasklist_align	  = "center"
+theme.tasklist_font     = "JetBrainsMono Nerd Font Mono 10"
+
+theme.taglist_font          = "JetBrainsMono Nerd Font Mono 16"
+theme.taglist_fg_occupied   = xrdb.color3
+theme.taglist_disable_icon  = true
+theme.taglist_squares_sel   = nil
+theme.taglist_squares_unsel = nil
+theme.taglist_squares_unsel_empty = nil
+theme.taglist_squares_resize = nil
 
 theme.tasklist_plain_task_name = false
 -- theme.taglist_font        = "awesomewm 11"
@@ -132,18 +156,19 @@ end
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 myawesomemenu = {
-   { "fox", "/usr/local/bin/firefox" },
-   { "term", terminal },
+--   { "fox", "/usr/local/bin/firefox" },
+--   { "term", terminal },
    { "hotkeys", function() return false, hotkeys_popup.show_help end},
    { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
+   { "config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", function() awesome.quit() end}
 }
 
-mymainmenu = awful.menu({ items = { { "Term", terminal },
-				    { "fox", "/usr/local/bin/firefox"},
-				    { "awesome", myawesomemenu, beautiful.awesome_icon }
+mymainmenu = awful.menu({ items = { 
+            { nerdfonts.devicons.terminal .. " tty", terminal },
+				    { nerdfonts.font_awesome.internet_explorer .. " fox", "/usr/local/bin/firefox"},
+				    { nerdfonts.font_awesome.window_restore .. " awm", myawesomemenu }
                                   }
                         })
 
@@ -212,7 +237,17 @@ awful.screen.connect_for_each_screen(function(s)
     gears.wallpaper.set(xrdb.background)
 
     -- Each screen has its own tag table.
-    awful.tag({ "  NET  ", "  CHAT  ", "  CODE  ", "  METH  ", "  JUNK  " }, s, awful.layout.layouts[1])
+    awful.tag(
+        { 
+            " " .. nerdfonts.devicons.terminal .. " ",
+            " " .. nerdfonts.font_awesome.internet_explorer .. " ",
+            " " .. nerdfonts.devicons.code .. " ",
+            " " .. nerdfonts.font_awesome.folder .. " ",
+            " " .. nerdfonts.font_awesome.fighter_jet .. " ",
+            " " .. nerdfonts.material_design.needle .. " ",
+            " " .. nerdfonts.font_awesome.trash .. " " 
+        },
+        s,awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -314,8 +349,6 @@ globalkeys = gears.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
-              {description = "quit awesome", group = "awesome"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
@@ -587,6 +620,6 @@ end)
 
 -- local xrdb = xresources.get_current_theme()
 client.connect_signal("unfocus", function(c) c.border_color = xrdb.color0 end)
-client.connect_signal("focus", function(c) c.border_color = xrdb.color6 end)
+client.connect_signal("focus", function(c) c.border_color = xrdb.color5 end)
 
 -- }}}

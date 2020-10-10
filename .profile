@@ -7,16 +7,18 @@ PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/
 xrdb -merge ~/.Xresources
 
 # Set EDITOR
-# export EDITOR="nvim"
+# export LC_CTYPE="en_US.UTF-8"
+# export LANG="en_US.UTF-8"
+# export LC_ALL="en_US.UTF-8"
 
 # Setup ENV
-export ENV="$HOME/.kshrc"
-# export HISTFILE="$HOME/.hist"
-
+# export ENV="${HOME}/.kshrc"
+# export XDG_CONFIG_HOME="${HOME}/.config"
 export PATH HOME TERM
+
 # Add local 'pip' to PATH:
 export PATH="${PATH}:${HOME}/.local/"
-export PATH="${PATH}:$home/.local/bin/"
+export PATH="${PATH}:${HOME}/.local/bin/"
 export PATH="${PATH}:/usr/local/lib/python3.7/site-packages/"
 
 # XDG Configuration to cleaup Home dir
@@ -35,4 +37,9 @@ alias ff="firefox &"
 alias fp="firefox -private-window &"
 alias pip="pip3.7"
 alias pf='/home/okt/Src/pfetch/pfetch'
+alias cl='/home/okt/Src/colour-script/cl.sh'
+alias tmux='tmux -f /home/okt/.config/tmux/tmux.conf'
+alias irssi='irssi --config /hoome/okt/.config/irssi/config'
 
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

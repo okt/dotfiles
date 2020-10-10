@@ -6,9 +6,12 @@
 URxvt.loginShell:	true
 
 !! URxvt Appearance
-URxvt.font: xft:JetBrainsMono:size=10:antialias=true
-URxvt.boldFont: xft:JetBrainsMono:bold:size=10:antialias=true
-URxvt.letterSpace: -1
+!! URxvt.font: xft:JetBrainsMono:size=10:antialias=true
+!! URxvt.boldFont: xft:JetBrainsMono:bold:size=10:antialias=true
+URxvt.font: xft:JetBrainsMono\ Nerd\ Font\ Mono:size=10:antialias=true
+URxvt.boldFont: xft: JetBrainsMono\ Nerd\ Font\ Mono:bold:size=10:antialias=true
+
+URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
 URxvt.internalBorder: 16
@@ -20,8 +23,9 @@ URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
 URxvt.depth: 24
 URxvt.iso14755: false
-URxvt.transparent:true
-URxvt.shading:6
+URxvt.transparent: true
+URxvt.shading: 12
+URxvt.locale: true
 
 !! Common Keybinds for Navigations
 URxvt.keysym.Shift-Up: command:\033]720;1\007
