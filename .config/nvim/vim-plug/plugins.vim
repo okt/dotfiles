@@ -29,23 +29,36 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Wich Key plugin, never forget a key... blah blah
     Plug 'liuchengxu/vim-which-key'
     
+    " Git
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'junegunn/gv.vim'
+    Plug 'rhysd/git-messenger.vim'
+
     " Floaterm is a floating terminal for Neovim
     Plug 'voldikss/vim-floaterm'
-
+    " Smooth scroll
+    Plug 'psliwka/vim-smoothie'
     " Startpage
     Plug 'mhinz/vim-startify'
-
+    " Better tabline
+    Plug 'romgrk/barbar.nvim'
     " Distraction Free mode, 'leader + go'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
-   
+    " Easymotion
+    Plug 'easymotion/vim-easymotion'
     " gcc to comment out selection, takes number input
     " ex. 4gcc comments out 4 lines. 
     Plug 'tpope/vim-commentary'
-    
+    " auto set indent settings
+    Plug 'tpope/vim-sleuth'
+    " Intuitive buffer closing
+    Plug 'moll/vim-bbye'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    
+    Plug 'kyazdani42/nvim-web-devicons'
     Plug 'airblade/vim-rooter'
 
     " Rust Config

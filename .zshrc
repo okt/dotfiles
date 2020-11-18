@@ -12,6 +12,8 @@ export PATH="${PATH}:${HOME}/.local/bin"
 export LANG=en_US.UTF-8
 export EDITOR='mvim'
 export PAGER="most"
+export VDPAU_DRIVER=nvidia
+export LIBVA_DRIVER_NAME=vdpau
 
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git sudo cargo cp emoji last-working-dir node npm rsync rust rustup)
@@ -54,7 +56,7 @@ alias os9='qemu-system-ppc \                                                    
     -g 1024x768x32 \
     -device usb-kbd \
     -device usb-mouse'
-
+alias untar='tar -xvzf'
 alias pcfetch='clear && neofetch --disable term gtk2 theme icons wm --block_height 2'
 alias rtxm='watch -d -n 0.5 nvidia-smi'
 

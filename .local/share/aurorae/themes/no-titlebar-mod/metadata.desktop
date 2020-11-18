@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=no-titlebar-mod
+Comment=skip most of the features.
+
+X-KDE-PluginInfo-Author=okt
+X-KDE-PluginInfo-Email=web@evanfiddes.com
+X-KDE-PluginInfo-Name=no-titlebar-mod
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-Category=
+X-KDE-PluginInfo-Depends=KDE 4.4.80
+X-KDE-PluginInfo-License=GPL_V3
+X-KDE-PluginInfo-EnabledByDefault=true
