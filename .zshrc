@@ -14,9 +14,15 @@ export EDITOR='mvim'
 export PAGER="most"
 export VDPAU_DRIVER=nvidia
 export LIBVA_DRIVER_NAME=vdpau
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+export FZF_DEFAULT_OPTS='
+  --color fg:255,bg:-1,hl:84,fg+:255,bg+:-1,hl+:215
+  --color info:141,prompt:84,spinner:212,pointer:212,marker:212
+'
 
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo cargo cp emoji last-working-dir node npm rsync rust rustup)
+plugins=(git sudo cargo cp fzf zsh-interactive-cd emoji last-working-dir node npm rsync rust rustup per-directory-history command-not-found)
 
 source $ZSH/oh-my-zsh.sh
 

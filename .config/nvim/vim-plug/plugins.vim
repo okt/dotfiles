@@ -35,7 +35,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
     Plug 'rhysd/git-messenger.vim'
-
+    Plug 'mattn/gist-vim'
+    Plug 'mattn/webapi-vim'
     " Floaterm is a floating terminal for Neovim
     Plug 'voldikss/vim-floaterm'
     " Smooth scroll
@@ -52,12 +53,24 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " gcc to comment out selection, takes number input
     " ex. 4gcc comments out 4 lines. 
     Plug 'tpope/vim-commentary'
+    Plug 'francoiscabrol/ranger.vim'
+    Plug 'posva/vim-vue'
+    Plug 'cespare/vim-toml'
+    Plug 'tikhomirov/vim-glsl'
+    Plug 'plasticboy/vim-markdown'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'machakann/vim-highlightedyank'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'skywind3000/asynctasks.vim'
+    Plug 'skywind3000/asyncrun.vim'
+
     " auto set indent settings
     Plug 'tpope/vim-sleuth'
     " Intuitive buffer closing
     Plug 'moll/vim-bbye'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'brooth/far.vim'
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'airblade/vim-rooter'
 
