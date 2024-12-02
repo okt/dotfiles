@@ -1,0 +1,13 @@
+[Default Applications]
+x-scheme-handler/etcher=balena-etcher-electron.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+text/html=firefox.desktop
+image/gif=feh.desktop
+image/svg=feh.desktop
+image/png=feh.desktop
+image/jpeg=feh.desktop
+image/jpg=feh.desktop
+application/pdf=org.pwmt.zathura.desktop
+
+[Added Associations]
