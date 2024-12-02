@@ -44,7 +44,7 @@ zsh           # shell
 
 ### Floating kitty terminal
 
-This script lets you draw a window to size a new `kitty` tmi terminal.
+This script lets you draw a window to size a new `kitty` terminal.
 
 ```bash
 #!/usr/bin/env bash
