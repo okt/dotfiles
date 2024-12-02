@@ -3,6 +3,16 @@
   "display": {
     "separator": "  "
   },
+  "logo": {
+    "type": "kitty-direct",
+    "source": "/home/okt/Files/Wallpapers/scratch/LinuxLogoMono.png",
+    "width": 40,
+    "padding": {
+      "top": 2,
+      "left": 1,
+      "right": 1
+    }
+  },
   "modules": [
     "break",
     "break",
