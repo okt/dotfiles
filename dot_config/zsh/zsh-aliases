@@ -12,7 +12,6 @@ alias \
     nb='newsboat' \
     vimdiff='nvim -d' \
     nvimdiff='nvim -d' \
-    fetch='neofetch --source ~/.config/neofetch/run-bsd' \
     clip='xclip -selection clipboard' \
     mkdir='mkdir -pv' \
     cp="cp -iv" \

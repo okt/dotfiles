@@ -11,6 +11,7 @@ aerc          # email client
 catnip        # audio visualizer
 cider         # Apple music client
 dunst         # notification daemon
+eza           # ls replacement
 fastfetch     # system information tool
 feh           # image viewer
 firefox       # web browser
@@ -20,6 +21,7 @@ gimp          # image editor
 greenclip     # clipboard manager
 hut           # sr.ht cli
 i3            # window manager
+jujutsu       # git compatible vcs
 kcolorpicker  # color picker
 kitty         # terminal emulator
 newsboat      # rss reader
