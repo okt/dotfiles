@@ -1,0 +1,31 @@
+export LESSHISTFILE=/dev/null
+export MANPAGER="nvim +Man!"
+export MANWIDTH=80
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+
+export TERMINAL="kitty"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export BROWSER="firefox"
+
+export BAT_THEME="base16"
+export BAT_STYLE="numbers,changes,header"
+
+export FZF_DEFAULT_OPTS=" \
+ --color=bg:-1,fg:-1,hl:6\
+ --color=bg+:8,fg+:7,hl+:11\
+ --color=info:6,border:3,prompt:4\
+ --color=pointer:0,marker:4,spinner:4,header:1"
+
+if [ -e /home/okt/.nix-profile/etc/profile.d/nix.sh ]; then . /home/okt/.nix-profile/etc/profile.d/nix.sh; fi 
+
+export ALPHAVANTAGE_API_KEY=L5108CPFS4FG9TRZ
+export GBM_BACKEND=nvidia-drm
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export GOPATH=/home/okt/.go
+export BUN_INSTALL="$HOME/.bun"
+
+# export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64
