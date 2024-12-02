@@ -1,0 +1,15 @@
+" General Settings
+set update.lastchecktime 1732933824624
+set update.lastnaggedversion 1.24.1
+set configversion 2.0
+set theme shydactyl
+
+" Binds
+unbind <F1>
+bind W tabdetach
+bind gnD tabopen https://duckduckgo.com/?q=markdown+no+multiple+blank+lines+neovim&t=newext&atb=v316-1&ia=web
+bind goD open https://duckduckgo.com/?q=markdown+no+multiple+blank+lines+neovim&t=newext&atb=v316-1&ia=web
+bind gwD winopen https://duckduckgo.com/?q=markdown+no+multiple+blank+lines+neovim&t=newext&atb=v316-1&ia=web
+
+" For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
+" vim: set filetype=tridactyl
