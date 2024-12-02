@@ -1,19 +1,4 @@
 return {
-  -- { "rebelot/kanagawa.nvim" },
-  -- { "psliwka/termcolors.nvim" },
-  -- { "chriskempson/base16-vim" },
-  -- { "kdheepak/monochrome.nvim", lazy = false },
-  -- {
-  --   "lukas-reineke/indent-blankline.nvim",
-  --   opts = {
-  --     disable_with_nolist = true,
-  --   },
-  -- },
-
-  -- {
-  --   "echasnovski/mini.indentscope",
-  --   cond = vim.opt.list:get(),
-  -- },
   {
     "catppuccin/nvim",
     enabled = false,
