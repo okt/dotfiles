@@ -21,7 +21,6 @@ launch_kitty() {
 
   if [ -n "$user_command" ]; then
     # Launch Kitty with the specified command and working directory
-    # --hold -- zsh -lic '$user_command'"
     i3-msg -q "exec --no-startup-id kitty --class $instance_name --directory $current_dir \
     --hold zsh -lic $user_command"
   else
@@ -58,8 +57,6 @@ else
   launch_kitty "$instance_name" "$current_dir"
 fi
 
-# Small delay to ensure the window is created
-sleep 0.4
-
 # Move the Kitty window to the desired position and resize it
+sleep 0.4
 i3-msg -q "[instance=\"$instance_name\"] floating enable, resize set $width $height, move absolute position $x $y"
