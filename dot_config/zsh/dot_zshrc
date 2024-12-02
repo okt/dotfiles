@@ -1,0 +1,166 @@
+bindkey -e                               # use Emacs keymap
+setopt extendedglob                      # Extended globbing, allows using regular expressions with *
+setopt globdots                          # Include hidden files in globbing
+setopt numericglobsort                   # Sort filenames numerically when it makes sense
+setopt nocaseglob                        # Case insensitive globbing
+setopt rcexpandparam                     # Array expansion with parameters
+setopt nocheckjobs                       # Don't warn about running processes when exiting
+setopt nobeep                            # No beep
+setopt appendhistory                     # Immediately append history instead of overwriting
+setopt autocd                            # If only directory path is entered, cd there
+setopt promptsubst                       # Enable prompt substitution
+setopt magic_equal_subst                 # Allow file expansion after =
+setopt interactive_comments              # Allow comments in interactive shell
+setopt no_flow_control                   # don't occupy [Ctrl+S] and [Ctrl+Q]
+setopt histignorespace                   # Skip cmds w/ leading space from history
+setopt histignorealldups                 # If a new command is a duplicate, remove the older one
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+
+# completions
+autoload -Uz compinit
+# zstyle ':completion::complete:lsof:*' menu yes select
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' accept-exact '*(N)'
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
+source <(jj util completion zsh)
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+# Colors
+autoload -Uz colors && colors
+
+# Useful Functions
+source "$ZDOTDIR/zsh-functions"
+
+# Normal files to source
+zsh_add_file "zsh-exports"
+zsh_add_file "zsh-aliases"
+
+# Plugins
+zsh_add_plugin "zsh-users/zsh-autosuggestions"
+zsh_add_plugin "zsh-users/zsh-completions"
+zsh_add_plugin "hlissner/zsh-autopair"
+zsh_add_plugin "romkatv/zsh-no-ps2"
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+# zsh_add_plugin "unixorn/fzf-zsh-plugin"
+# zsh_add_plugin "miekg/lean"
+
+zsh_add_completion "redxtech/zsh-kitty"
+zsh_add_completion "MenkeTechnologies/zsh-cargo-completion"
+# bun completions
+[ -s "/home/okt/.bun/_bun" ] && source "/home/okt/.bun/_bun"
+
+# For more plugins: https://github.com/unixorn/awesome-zsh-plugins
+# More completions https://github.com/zsh-users/zsh-completions
+
+zle_highlight=('paste:none')
+
+# Ref: https://github.com/marlonrichert/zsh-edit
+qc-word-widgets() {
+    local wordpat='[[:WORD:]]##|[[:space:]]##|[^[:WORD:][:space:]]##'
+    local words=(${(Z:n:)BUFFER}) lwords=(${(Z:n:)LBUFFER})
+    case $WIDGET {
+        (*sub-l)   local move=-${(N)LBUFFER%%$~wordpat} ;;
+        (*sub-r)   local move=+${(N)RBUFFER##$~wordpat} ;;
+        (*shell-l) local move=-${(N)LBUFFER%$lwords[-1]*} ;;
+        (*shell-r) local move=+${(N)RBUFFER#*${${words[$#lwords]#$lwords[-1]}:-$words[$#lwords+1]}} ;;
+    }
+    case $WIDGET {
+        (*kill*) (( MARK = CURSOR + move )); zle -f kill; zle .kill-region ;;
+        (*)      (( CURSOR += move )) ;;
+    }
+}
+for w in qc{,-kill}-{sub,shell}-{l,r}; zle -N $w qc-word-widgets
+# bindkey '\E[1;5D' qc-sub-l         # [Ctrl+Left]
+# bindkey '\E[1;5C' qc-sub-r         # [Ctrl+Right]
+bindkey '\E[1;3D' qc-shell-l       # [Alt+Left]
+bindkey '\E[1;3C' qc-shell-r       # [Alt+Right]
+# bindkey '\C-H'    qc-kill-sub-l    # [Ctrl+Backspace] (Konsole)
+# bindkey '\C-W'    qc-kill-sub-l    # [Ctrl+Backspace] (VSCode)
+# bindkey '\E[3;5~' qc-kill-sub-r    # [Ctrl+Delete]
+bindkey '\E^?'    qc-kill-shell-l  # [Alt+Backspace]
+bindkey '\E[3;3~' qc-kill-shell-r  # [Alt+Delete]
+WORDCHARS='*?[]~&;!#$%^(){}<>'
+
+# Trim trailing whitespace from pasted text
+# Ref: https://unix.stackexchange.com/questions/693118
+qc-trim-paste() {
+    zle .bracketed-paste
+    LBUFFER=${LBUFFER%%[[:space:]]#}
+}
+zle -N bracketed-paste qc-trim-paste
+
+# Change `...` to `../..`
+# Ref: https://grml.org/zsh/zsh-lovers.html#_completion
+qc-rationalize-dot() {
+    if [[ $LBUFFER == *.. ]] {
+        LBUFFER+='/..'
+    } else {
+        LBUFFER+='.'
+    }
+}
+zle -N qc-rationalize-dot
+bindkey '.' qc-rationalize-dot
+bindkey '^[.' self-insert-unmeta  # [Alt+.] insert dot
+
+# [Ctrl+L] Clear screen but keep scrollback
+# Ref: https://superuser.com/questions/1389834
+qc-clear-screen() {
+    local prompt_height=$(echo -n ${(%%)PS1} | wc -l)
+    local lines=$((LINES - prompt_height))
+    printf "$terminfo[cud1]%.0s" {1..$lines}  # cursor down
+    printf "$terminfo[cuu1]%.0s" {1..$lines}  # cursor up
+    zle .reset-prompt
+}
+zle -N qc-clear-screen
+bindkey '^L' qc-clear-screen
+
+# Key-bindings
+bindkey '\C-Z' undo
+bindkey '\C-Y' redo
+bindkey '\C-U' backward-kill-lin
+bindkey -s '^o' 'nvim $(fzf)^M'
+bindkey -s '^z' 'zi^M'
+bindkey "^p" up-line-or-beginning-search # Up
+bindkey "^n" down-line-or-beginning-search # Down
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
+# HSTR configuration
+alias hh=hstr                    # hh to be alias for hstr
+export HSTR_CONFIG=hicolor       # get more colors
+hstr_no_tiocsti() {
+    zle -I
+    { HSTR_OUT="$( { </dev/tty hstr ${BUFFER}; } 2>&1 1>&3 3>&- )"; } 3>&1;
+    BUFFER="${HSTR_OUT}"
+    CURSOR=${#BUFFER}
+    zle redisplay
+}
+zle -N hstr_no_tiocsti
+bindkey '\C-r' hstr_no_tiocsti
+export HSTR_TIOCSTI=n
+
+autoload -Uz add-zsh-hook
+
+# [PRECMD] Reset cursor shape as some programs (nvim, yazi) will change it
+_qc-reset-cursor() {
+    print -n '\E[5 q'  # line cursor
+}
+add-zsh-hook precmd _qc-reset-cursor
+
+# evals
+eval "$(zoxide init zsh)"
+eval "$(fnm env --use-on-cd)"
+# eval "$(frum init)"
+eval "$(starship init zsh)"
+eval "$(direnv hook zsh)"
