@@ -8,26 +8,38 @@ These are a few of my favorite things:
 
 ```sh
 aerc          # email client
+bat           # enhanced cat clone
+bluetuil      # bluetooth manager
+bun           # javascript toolkit
 catnip        # audio visualizer
 cider         # Apple music client
+direnv        # environment switcher
 dunst         # notification daemon
 eza           # ls replacement
 fastfetch     # system information tool
 feh           # image viewer
 firefox       # web browser
+fnm           # node version manager
+fzf           # fuzzy finder
 galculator    # calculator
 gh            # github cli
 gimp          # image editor
+git           # version control
 greenclip     # clipboard manager
+hstr          # history browser
+hugo          # static site generator
 hut           # sr.ht cli
 i3            # window manager
 jujutsu       # git compatible vcs
+jj-fzf        # fzf jujutsu browser
+jq            # json processor
 kcolorpicker  # color picker
 kitty         # terminal emulator
 newsboat      # rss reader
 nvim          # text editor
 obsidian      # note taking app
 picom         # compositor
+rustup        # rust toolchain
 scrot         # screenshot tool
 senpai        # irc client
 slop          # select screen area
@@ -37,6 +49,7 @@ tmux          # terminal multiplexer
 tridactyl     # vim-like browser add-on
 yazi          # tui file browser
 zathura       # pdf reader
+zoxide        # enhanced cd replacement
 zsh           # shell
 ```
 
