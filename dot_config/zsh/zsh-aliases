@@ -1,0 +1,40 @@
+alias \
+    ls='eza -1 -F --group-directories-first --icons --hyperlink' \
+    l='eza -1 -F --group-directories-first --icons --hyperlink -G' \
+    la='eza -1 -aF --group-directories-first --icons -X --hyperlink' \
+    lag='eza -1 -aF --group-directories-first --icons -X --hyperlink -G' \
+    llg='eza -aF -g --long --header --sort=size -r --group-directories-first --icons -X --hyperlink -G' \
+    ll='eza -aF -g --long --header --sort=size -r --group-directories-first --icons -X --hyperlink' \
+    lt='eza -TF -L3 --icons -X --hyperlink' \
+    lg='eza -aF --long --header --sort=size -r --group-directories-first --git --git-repos -m --icons -X --hyperlink'
+
+alias \
+    nb='newsboat' \
+    vimdiff='nvim -d' \
+    nvimdiff='nvim -d' \
+    fetch='neofetch --source ~/.config/neofetch/run-bsd' \
+    clip='xclip -selection clipboard' \
+    mkdir='mkdir -pv' \
+    cp="cp -iv" \
+    mv="mv -iv" \
+    rm="rm -vI" \
+    df='df -h' \
+    dus='du -sh -- */ | sort -rh' \
+    gfu='nvim +:Ge:' \
+    copy='xclip -sel c' \
+    sd='. ~/.config/zsh/.zshrc; echo "Reloaded conf.\n"' \
+    vi='nvim' \
+    fk='floating_kitty2' \
+    ff='fastfetch'
+
+alias cnb='catnip -bt 0 -ct 1 -fg 5 -bw 1 -bs 1 -d bluez_output.04_21_44_BD_5D_0F.1'
+alias cnh='catnip -bt 0 -ct 1 -fg 5 -bw 1 -bs 1 -d alsa_output.pci-0000_0e_00.4.analog-stereo'
+
+alias update-plan='T=`mktemp` && curl -so $T https://plan.cat/~okt && $EDITOR $T && curl -su okt -F  "plan=<$T" https://plan.cat/stdin'
+alias clbin="curl -F 'clbin=<-' https://clbin.com"
+
+# verify signature
+alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
+# receive the key of a developer
+alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+
