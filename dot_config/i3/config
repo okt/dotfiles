@@ -175,7 +175,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+n exec /usr/bin/nemo
 
 # screenshots
-bindsym $mod+Print exec sleep 0.2; scrot --select ~/Files/Screenshots/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot as $(date +"%Y-%m-%d-%T")-screenshot.png"
+bindsym $mod+Print exec "sleep 0.2; scrot --select ~/Files/Screenshots/%Y-%m-%d-%T-screenshot.png"
 bindsym Print exec scrot ~/Files/Screenshots/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot as $(date +"%Y-%m-%d-%T")-screenshot.png"
 
 ############
