@@ -12,6 +12,7 @@ catnip        # audio visualizer
 cider         # Apple music client
 dunst         # notification daemon
 fastfetch     # system information tool
+feh           # image viewer
 firefox       # web browser
 galculator    # calculator
 gh            # github cli
