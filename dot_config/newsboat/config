@@ -1,0 +1,38 @@
+text-width 80
+auto-reload yes
+max-items 100
+cleanup-on-quit yes
+confirm-exit no
+notify-program notify-send
+browser "firefox %u"
+pager "less %f"
+reload-time 60
+reload-threads 12
+datetime-format "%Y %b %d"
+articlelist-format "%4i %f %D - %?T?|%-17T| ?%t"
+
+bind-key j next
+bind-key k prev
+bind-key J next-feed
+bind-key K prev-feed
+bind-key j down article
+bind-key k up article
+bind-key J next article
+bind-key K prev article
+bind-key l open
+bind-key h quit
+bind-key m toggle-article-read
+
+# Macros for opening with different programs
+macro m set browser "mpv %u"; open-in-browser ; set browser "firefox %u"
+
+highlight feedlist " .*" default default bold
+highlight feedlist ".*0/0.." default default invis
+
+#color <element>          <fg>       <bg>      [special]
+color background          blue    default
+color info                color239   default
+color listnormal          color15   default
+color listnormal_unread   color15      default
+color listfocus           color7   default   standout
+color listfocus_unread    color7       default   standout bold
