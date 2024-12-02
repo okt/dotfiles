@@ -1,0 +1,25 @@
+set $foreground #eeeeee
+set $background #0e0e0e
+set $color0 #0e0e0e
+set $color1 #ec8989
+set $color2 #c9d36a
+set $color3 #ceb581
+set $color4 #8abae1
+set $color5 #db9fe9
+set $color6 #abebe2
+set $color7 #eeeeee
+set $color8 #222222
+set $color9 #ffc4c4
+set $color10 #eff6ab
+set $color11 #ffe6b5
+set $color12 #c9e6fd
+set $color13 #f7d7ff
+set $color14 #ddfcf8
+set $color15 #d4d4d4
+
+set $black $color0
+set $gray1 $color8
+set $gray2 $color15
+set $gray3 $color7
+set $white $foreground
+set $red $color1
