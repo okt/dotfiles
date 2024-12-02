@@ -1,0 +1,164 @@
+# A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
+# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
+"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# : Flavor {{{
+
+[flavor]
+use = ""
+
+
+# : Manager {{{
+[manager]
+cwd = { fg = "blue" }  # Blue
+
+# Hovered
+hovered = { bg = "#222222" }  # Darkened background
+preview_hovered = { underline = true }
+
+# Find
+find_keyword = { fg = "red", italic = true, underline = true }  # Red
+find_position = { fg = "yellow", italic = true }  # Orange
+
+# Marker
+marker_copied = { fg = "#222222", bg = "green" }  # Light gray on Green
+marker_cut = { fg = "#222222", bg = "red" }  # Light gray on Red
+marker_marked = { fg = "#222222", bg = "cyan" }  # Light gray on cyan
+marker_selected = { fg = "#222222", bg = "yellow" }  # Light gray on Orange
+
+# Tab
+tab_active = { bg = "#282C34", fg = "blue" }  # Darkened background, Blue text
+tab_inactive = {}
+tab_width = 1
+
+# Count
+count_copied = { fg = "green", bg = "#282C34" }  # Green on Darkened background
+count_cut = { fg = "red", bg = "#282C34" }  # Red on Darkened background
+count_selected = { fg = "green", bg = "#282C34" }  # Green on Darkened background
+
+# Border
+border_symbol = "│"
+border_style = { fg = "#282C34" }  # Darkened background
+
+# : }}}
+
+# : Status {{{
+[status]
+separator_open = ""
+separator_close = ""
+separator_style = { fg = "blue", bg = "#282C34" }  # Blue on Darkened background
+
+# Mode
+mode_normal = { fg = "#282C34", bg = "blue", bold = true }  # Dark gray on Blue
+mode_select = { fg = "#282C34", bg = "blue", bold = true }  # Dark gray on Blue
+mode_unset = { fg = "#282C34", bg = "blue", bold = true }  # Dark gray on Blue
+
+# Progress
+progress_label = { fg = "#222222", bold = true }  # Light gray
+progress_normal = { fg = "green", bg = "#282C34" }  # Green on Darkened background
+progress_error = { fg = "red", bg = "#282C34" }  # Red on Darkened background
+
+# Permissions
+permissions_t = { fg = "green" }  # Green
+permissions_r = { fg = "red" }  # Red
+permissions_w = { fg = "yellow" }  # Orange
+permissions_x = { fg = "green" }  # Green
+permissions_s = { fg = "#222222" }  # Light gray
+
+# : }}}
+
+# : Select {{{
+[select]
+border = { fg = "green" }  # Green
+active = { fg = "yellow", bold = true }  # Orange
+inactive = {}
+
+# : }}}
+
+# : Input {{{
+[input]
+border = { fg = "green" }  # Green
+title = {}
+value = {}
+selected = { reversed = true }
+
+# : }}}
+
+# : Completion {{{
+[completion]
+border = { fg = "green" }  # Green
+
+# : }}}
+
+# : Tasks {{{
+[tasks]
+border = { fg = "green" }  # Green
+title = {}
+hovered = { fg = "yellow", underline = true }  # Orange
+
+# : }}}
+
+# : Which {{{
+[which]
+mask = { bg = "#282C34" }  # Darkened background
+cand = { fg = "green" }  # Green
+rest = { fg = "#222222" }  # Light gray
+desc = { fg = "yellow" }  # Orange
+separator = "  "
+separator_style = { fg = "#222222" }  # Light gray
+
+# : }}}
+
+# : Help {{{
+[help]
+on = { fg = "green" }  # Green
+run = { fg = "yellow" }  # Orange
+hovered = { reversed = true, bold = true }
+footer = { fg = "#222222" }  # Light gray on Black
+
+# : }}}
+
+# : Notify {{{
+[notify]
+title_info = { fg = "green" }  # Green
+title_warn = { fg = "red" }  # Red
+title_error = { fg = "yellow" }  # Orange
+
+# : }}}
+
+# : File-specific styles {{{
+
+[filetype]
+
+rules = [
+    # Images
+    { mime = "image/*", fg = "yellow" },  # Orange
+
+    # Media
+    { mime = "video/*", fg = "red" },  # Red
+    { mime = "audio/*", fg = "red" },  # Red
+
+    # Archives
+    { mime = "application/zip", fg = "magenta" },  # Magenta
+    { mime = "application/x-tar", fg = "magenta" },  # Magenta
+    { mime = "application/x-bzip*", fg = "magenta" },  # Magenta
+    { mime = "application/x-bzip2", fg = "magenta" },  # Magenta
+    { mime = "application/x-7z-compressed", fg = "magenta" },  # Magenta
+    { mime = "application/x-rar", fg = "magenta" },  # Magenta
+    { mime = "application/x-xz", fg = "magenta" },  # Magenta
+
+    # Documents
+    { mime = "application/doc", fg = "green" },  # Green
+    { mime = "application/pdf", fg = "green" },  # Green
+    { mime = "application/rtf", fg = "green" },  # Green
+    { mime = "application/vnd.*", fg = "green" },  # Green
+
+    # Fallback
+    { name = "*", fg = "white" },  # Blue
+    { name = "*/", fg = "blue" }  # Blue
+]
+
+# : }}}
+
