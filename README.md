@@ -1,6 +1,6 @@
 # dotfiles
 
-Dotfiles managed with [chezmoi](https:/./chezmoi.io).
+Dotfiles managed with [chezmoi](https://github.com/twpayne/chezmoi).
 
 ## software
 
@@ -36,4 +36,3 @@ yazi          # tui file browser
 zathura       # pdf reader
 zsh           # shell
 ```
-
