@@ -40,7 +40,7 @@ zathura       # pdf reader
 zsh           # shell
 ```
 
-## Scripts
+## scripts
 
 ### Floating kitty terminal
 
