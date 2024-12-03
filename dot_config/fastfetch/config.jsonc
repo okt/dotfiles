@@ -22,9 +22,9 @@
       "keyColor": "31"
     },
     {
-      "type": "kernel",
+      "type": "command",
       "key": "KER...",
-      "format": "{3}",
+      "text": "uname -r | awk -F'-' '{print $1}'",
       "keyColor": "32"
     },
     {
@@ -48,6 +48,7 @@
     {
       "type": "wm",
       "key": "WM....",
+      "format": "{2}",
       "keyColor": "36"
     },
     "break",
