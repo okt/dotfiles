@@ -6,51 +6,61 @@ Dotfiles managed with [chezmoi](https://github.com/twpayne/chezmoi).
 
 These are a few of my favorite things:
 
+### terminal
+
 ```sh
 aerc          # email client
 bat           # enhanced cat clone
 bluetuil      # bluetooth manager
 bun           # javascript toolkit
 catnip        # audio visualizer
-cider         # Apple music client
 direnv        # environment switcher
-dunst         # notification daemon
 eza           # ls replacement
 fastfetch     # system information tool
 feh           # image viewer
-firefox       # web browser
 fnm           # node version manager
 fzf           # fuzzy finder
-galculator    # calculator
 gh            # github cli
-gimp          # image editor
 git           # version control
-greenclip     # clipboard manager
 hstr          # history browser
 hugo          # static site generator
 hut           # sr.ht cli
-i3            # window manager
 jujutsu       # git compatible vcs
 jj-fzf        # fzf jujutsu browser
 jq            # json processor
-kcolorpicker  # color picker
-kitty         # terminal emulator
 newsboat      # rss reader
 nvim          # text editor
-obsidian      # note taking app
-picom         # compositor
 rustup        # rust toolchain
-scrot         # screenshot tool
 senpai        # irc client
 slop          # select screen area
 starship      # prompt
-sunshine      # streaming remote-desktop
+tldr          # quick command reference
 tmux          # terminal multiplexer
 tridactyl     # vim-like browser add-on
 yazi          # tui file browser
-zathura       # pdf reader
 zoxide        # enhanced cd replacement
 zsh           # shell
+```
+
+### gui
+
+```sh
+i3            # window manager
+blender       # 3d modeling
+cider         # Apple music client
+dunst         # notification daemon
+feh           # image viewer
+firefox       # web browser
+galculator    # calculator
+gimp          # image editor
+greenclip     # clipboard manager
+kcolorpicker  # color picker
+kitty         # terminal emulator
+obsidian      # note taking app
+picom         # compositor
+scrot         # screenshot tool
+sunshine      # streaming remote-desktop
+zathura       # pdf reader
 ```
 
 ## scripts
