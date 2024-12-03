@@ -36,7 +36,6 @@ slop          # select screen area
 starship      # prompt
 tldr          # quick command reference
 tmux          # terminal multiplexer
-tridactyl     # vim-like browser add-on
 yazi          # tui file browser
 zoxide        # enhanced cd replacement
 zsh           # shell
@@ -60,6 +59,7 @@ obsidian      # note taking app
 picom         # compositor
 scrot         # screenshot tool
 sunshine      # streaming remote-desktop
+tridactyl     # vim-like browser add-on
 zathura       # pdf reader
 ```
 
