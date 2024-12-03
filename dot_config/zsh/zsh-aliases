@@ -1,8 +1,8 @@
 alias \
     ls='eza -1 -F --group-directories-first --icons --hyperlink' \
     l='eza -1 -F --group-directories-first --icons --hyperlink -G' \
-    la='eza -1 -aF --group-directories-first --icons -X --hyperlink' \
-    lag='eza -1 -aF --group-directories-first --icons -X --hyperlink -G' \
+    la='eza -1 -aF --group-directories-first --icons --hyperlink' \
+    lag='eza -1 -aF --group-directories-first --icons --hyperlink -G' \
     llg='eza -aF -g --long --header --sort=size -r --group-directories-first --icons -X --hyperlink -G' \
     ll='eza -aF -g --long --header --sort=size -r --group-directories-first --icons -X --hyperlink' \
     lt='eza -TF -L3 --icons -X --hyperlink' \
