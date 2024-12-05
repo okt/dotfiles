@@ -20,8 +20,6 @@ export FZF_DEFAULT_OPTS=" \
  --color=info:6,border:3,prompt:4\
  --color=pointer:0,marker:4,spinner:4,header:1"
 
-if [ -e /home/okt/.nix-profile/etc/profile.d/nix.sh ]; then . /home/okt/.nix-profile/etc/profile.d/nix.sh; fi 
-
 export ALPHAVANTAGE_API_KEY=L5108CPFS4FG9TRZ
 export GBM_BACKEND=nvidia-drm
 export __GLX_VENDOR_LIBRARY_NAME=nvidia

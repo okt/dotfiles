@@ -8,6 +8,8 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-/home/okt/.local/state}"
 if [ -f "/home/okt/.local/share/antidot/env.sh" ]; then source "/home/okt/.local/share/antidot/env.sh"; fi
 if [ -f "/home/okt/.local/share/antidot/alias.sh" ]; then source "/home/okt/.local/share/antidot/alias.sh"; fi
 
+if [ -e /home/okt/.nix-profile/etc/profile.d/nix.sh ]; then . /home/okt/.nix-profile/etc/profile.d/nix.sh; fi 
+
 path=(
     ./node_modules/.bin
     $HOME/.local/bin
