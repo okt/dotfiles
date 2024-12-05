@@ -9,12 +9,13 @@ if [ -f "/home/okt/.local/share/antidot/env.sh" ]; then source "/home/okt/.local
 if [ -f "/home/okt/.local/share/antidot/alias.sh" ]; then source "/home/okt/.local/share/antidot/alias.sh"; fi
 
 # typeset -U PATH
-path+=(
+path=(
     $HOME/.local/bin
     ~/.cargo/bin
     ~/.bun/bin
     ~/.go/bin
     ./node_modules/.bin
+    $PATH
 )
 
 export PATH
