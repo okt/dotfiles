@@ -30,14 +30,3 @@ export BUN_INSTALL="$HOME/.bun"
 
 # export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64
 
-typeset -U PATH
-path+=(
-    $HOME/.local/bin
-    ~/.cargo/bin
-    ~/.bun/bin
-    ~/.go/bin
-    ./node_modules/.bin
-)
-
-export PATH
-
