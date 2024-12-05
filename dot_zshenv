@@ -8,7 +8,7 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-/home/okt/.local/state}"
 if [ -f "/home/okt/.local/share/antidot/env.sh" ]; then source "/home/okt/.local/share/antidot/env.sh"; fi
 if [ -f "/home/okt/.local/share/antidot/alias.sh" ]; then source "/home/okt/.local/share/antidot/alias.sh"; fi
 
-typeset -U PATH
+# typeset -U PATH
 path=(
     $HOME/.local/bin
     ~/.cargo/bin
@@ -17,3 +17,5 @@ path=(
     $PATH
     ./node_modules/.bin
 )
+
+export PATH
