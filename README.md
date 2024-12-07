@@ -15,6 +15,7 @@ bluetuil      # bluetooth manager
 bun           # javascript toolkit
 catnip        # audio visualizer
 direnv        # environment switcher
+entr          # file watcher
 eza           # ls replacement
 fastfetch     # system information tool
 feh           # image viewer
